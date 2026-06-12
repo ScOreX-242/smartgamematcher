@@ -8,6 +8,7 @@ import { DashboardPage } from '@/pages/Dashboard/DashboardPage'
 import { RecommendationsPage } from '@/pages/Recommendations/RecommendationsPage'
 import { GameDetailsPage } from '@/pages/GameDetails/GameDetailsPage'
 import { ProfilePage } from '@/pages/Profile/ProfilePage'
+import { NotFoundPage } from '@/pages/NotFound/NotFoundPage'
 
 export default function App() {
   return (
@@ -34,6 +35,10 @@ export default function App() {
           </Route>
         </Route>
 
+        {/* Public 404 */}
+        <Route path="/404" element={<NotFoundPage />} />
+
+        {/* Catch-all → login for unauthenticated, 404 for authenticated */}
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>

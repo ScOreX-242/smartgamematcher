@@ -31,7 +31,7 @@ const defaultState = {
 
 export const useRecommendationStore = create<RecommendationStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       ...defaultState,
       setRecommendations: (recommendations) =>
         set({ recommendations, currentIndex: 0 }),
@@ -60,11 +60,7 @@ export const useRecommendationStore = create<RecommendationStore>()(
           const filtered = s.recentlyViewed.filter((g) => g.id !== game.id)
           return { recentlyViewed: [game, ...filtered].slice(0, 10) }
         }),
-      reset: () => {
-        const { currentIndex: _ci, ...rest } = get()
-        void rest
-        set(defaultState)
-      },
+      reset: () => set(defaultState),
     }),
     { name: 'sgm-recommendations' }
   )

@@ -264,8 +264,11 @@ function FilterBar({
 
 export function RecommendationsPage() {
   const { genres, platform: prefPlatform } = usePreferenceStore()
-  const { recommendations, currentIndex, setRecommendations, nextGame, likeGame, dislikeGame, saveGame } =
-    useRecommendationStore()
+  const {
+    recommendations, currentIndex,
+    setRecommendations, appendRecommendations,
+    nextGame, likeGame, dislikeGame, saveGame,
+  } = useRecommendationStore()
 
   const [loading, setLoading] = useState(false)
   const [activeGenre, setActiveGenre] = useState<Genre | null>(null)
@@ -276,14 +279,12 @@ export function RecommendationsPage() {
   const visibleGames = recommendations.slice(currentIndex, currentIndex + 3)
   const currentGame = visibleGames[0] as Game | undefined
 
-  useEffect(() => {
-    load()
-  }, [activeGenre, activePlatform])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { load() }, [activeGenre, activePlatform])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    if (recommendations.length - currentIndex <= 3 && !loadingRef.current) {
-      loadMore()
-    }
+    if (recommendations.length - currentIndex <= 3 && !loadingRef.current) loadMore()
   }, [currentIndex, recommendations.length])
 
   async function load() {
@@ -309,7 +310,7 @@ export function RecommendationsPage() {
       { genres: activeGenre ? [activeGenre] : genres, platform: activePlatform ?? prefPlatform ?? undefined },
       page
     )
-    useRecommendationStore.getState().appendRecommendations(data)
+    appendRecommendations(data)
     loadingRef.current = false
   }
 
