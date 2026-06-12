@@ -1,6 +1,0 @@
-{
-  "name": "Smart Match",
-  "description": "A sophisticated dark game recommendation and discovery matches engine with interactive swiping and preferences customization.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
