@@ -1,0 +1,3 @@
+export function DashboardPage() {
+  return <div className="min-h-screen bg-[#0B0F19] flex items-center justify-center text-white">Dashboard — Coming in Phase 4</div>
+}
