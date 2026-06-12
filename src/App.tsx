@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
-import { ProtectedRoute, AuthRoute } from '@/routes/ProtectedRoute'
+import { ProtectedRoute, AuthRoute, OnboardingGuard } from '@/routes/ProtectedRoute'
 import { LoginPage } from '@/pages/Login/LoginPage'
 import { RegisterPage } from '@/pages/Register/RegisterPage'
 import { OnboardingPage } from '@/pages/Onboarding/OnboardingPage'
@@ -13,13 +13,18 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Unauthenticated only */}
         <Route element={<AuthRoute />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Route>
 
-        <Route path="/onboarding" element={<OnboardingPage />} />
+        {/* Auth required, onboarding NOT complete */}
+        <Route element={<OnboardingGuard />}>
+          <Route path="/onboarding" element={<OnboardingPage />} />
+        </Route>
 
+        {/* Auth + onboarding complete */}
         <Route element={<ProtectedRoute />}>
           <Route element={<AppLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
