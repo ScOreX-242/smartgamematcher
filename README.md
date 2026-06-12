@@ -1,96 +1,150 @@
 Smart Game Matcher
 
-Smart Game Matcher is a web application that helps users discover video games tailored to their personal preferences and playing habits.
+Smart Game Matcher is a web application that helps users discover video games that actually match their preferences, instead of forcing them to scroll endlessly through irrelevant options.
+
+---
+
+**Table of Contents**
+
+1. Overview
+2. Core Functionality
+3. User Flow
+4. Technology Stack
+5. System Structure
+6. Recommendation Logic
+7. User Experience
+8. Project Scope
+9. Future Improvements
+10. Conclusion
+
+---
 
 Overview
 
-Modern gaming platforms offer thousands of titles, making it difficult for users to decide what to play. Many players spend excessive time browsing instead of playing. This project addresses that issue by simplifying game discovery through personalized recommendations.
+Today, choosing a game can be more frustrating than playing one. With thousands of titles available across platforms, users often feel overwhelmed and unsure where to start.
+
+Smart Game Matcher focuses on solving this exact problem. Instead of showing more options, it helps users find the *right* ones.
+
+---
 
 Core Functionality
 
-The application provides the following capabilities:
+The platform is built around a few key ideas:
 
-User registration and authentication
-Onboarding process to collect preferences
-Personalized game recommendations
-Like and dislike feedback system
-Game detail pages with relevant explanations
+* Simple and secure user authentication
+* A short onboarding process to understand the player
+* Personalized game recommendations
+* A feedback system (like / dislike) that improves results
+* Detailed game pages with explanations
 
-Workflow
+The goal is not just to recommend games, but to explain *why* they fit.
 
-The user journey is designed to be simple and intuitive:
+---
 
-User creates an account or logs in
-Completes a short onboarding questionnaire
-Receives a list of recommended games
-Interacts with recommendations (like or dislike)
-System adapts future suggestions based on feedback
+User Flow
+
+The experience is designed to feel natural and fast:
+
+* The user signs up or logs in
+* Completes a quick onboarding (preferences, play style, time)
+* Instantly receives tailored game suggestions
+* Interacts with recommendations
+* The system gradually learns and improves
+
+Over time, the platform becomes more accurate with every interaction.
+
+---
 
 Technology Stack
 
-The application is built using standard modern web technologies:
+The application uses a modern and practical stack:
 
-Frontend: React or Next.js for user interface
-Backend: Node.js (Express) or Python (FastAPI)
-Database: PostgreSQL
-Communication: REST API
+* Frontend: React or Next.js
+* Backend: Node.js (Express) or Python (FastAPI)
+* Database: PostgreSQL
+* Communication: REST API
+
+The focus is on simplicity, scalability, and maintainability.
+
+---
 
 System Structure
 
-The project is divided into three main parts:
+The project is divided into three main layers:
 
 Frontend
-Handles user interface and interactions
-Displays recommendations and game data
+Handles everything the user sees and interacts with, including forms, navigation, and recommendation display.
+
 Backend
-Processes requests and business logic
-Generates recommendations
+Processes user data, applies business logic, and generates recommendations.
+
 Database
-Stores users, preferences, games, and feedback
+Stores structured data such as users, preferences, games, and feedback.
+
+Each layer has a clear responsibility, making the system easier to develop and extend.
+
+---
 
 Recommendation Logic
 
-The recommendation system works in two stages:
+The recommendation system starts simple but evolves over time.
 
-Initial stage
-Matches user preferences (genre, play style, playtime) with available games
-Adaptive stage
-Improves recommendations based on user feedback
-Prioritizes similar games over time
+Initial stage:
+
+* Matches user preferences (genre, play style, playtime) with available games
+
+Adaptive stage:
+
+* Learns from user feedback
+* Prioritizes similar games based on past interactions
 
 Example:
 
-If a user prefers action games with short sessions
-The system will recommend similar titles with matching characteristics
+If a user consistently prefers fast-paced games with short sessions, the system will begin to highlight similar titles automatically.
+
+---
 
 User Experience
 
-The application focuses on clarity and ease of use:
+The application is designed to be clear, fast, and intuitive:
 
-Simple and minimal interface
-Card-based layout for browsing games
-Fast interaction with recommendations
-Responsive design for desktop and mobile
+* Minimal and distraction-free interface
+* Card-based layout for browsing
+* Quick actions (like / dislike)
+* Responsive design for all devices
+
+The goal is to reduce friction and make discovery effortless.
+
+---
 
 Project Scope
 
-The initial version includes:
+The initial version (MVP) includes:
 
-Authentication system
-Onboarding process
-Basic recommendation engine
-Interactive feedback system
-Game listing and detail views
+* Authentication system
+* Onboarding flow
+* Basic recommendation engine
+* Feedback system
+* Game list and detail pages
+
+This provides a complete, working product with core functionality.
+
+---
 
 Future Improvements
 
-Planned enhancements may include:
+The project can be expanded in several directions:
 
-Integration with external platforms (e.g., Steam)
-More advanced recommendation algorithms
-Social features (friends, shared lists)
-User analytics and insights
+* Integration with external platforms (such as Steam)
+* More advanced recommendation algorithms
+* Social features (friends, shared lists)
+* Analytics and user insights
+
+---
 
 Conclusion
 
-Smart Game Matcher improves the process of choosing what to play. Instead of overwhelming users with options, it provides focused, personalized recommendations that evolve over time.
+Smart Game Matcher is not about adding more games to the user’s screen.
+It is about helping users make better choices faster.
+
+Instead of overwhelming players with options, the platform guides them toward games they are actually likely to enjoy.
