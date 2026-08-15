@@ -148,4 +148,5 @@ Smart Game Matcher is not about adding more games to the user’s screen.
 It is about helping users make better choices faster.
 
 Instead of overwhelming players with options, the platform guides them toward games they are actually likely to enjoy.
-URL: https://smart-match-845398225975.europe-west3.run.app/
+
+Link: https://smart-match-845398225975.europe-west3.run.app/
